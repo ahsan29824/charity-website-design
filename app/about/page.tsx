@@ -55,26 +55,53 @@ export default function AboutPage() {
               <ReadingChildArt className="mt-10 w-full max-w-[24rem]" />
             </Reveal>
             <Reveal delay={100}>
-              <div className="space-y-5 text-lg leading-[1.75] text-body">
-                <p className="drop-cap">
-                  Mohammed Sadique (1950 – 2026) believed that giving to others is the highest responsibility a person
-                  can hold. He rarely spoke about it, but those close to him knew how many people he had quietly helped.
+              <div className="text-lg leading-[1.75] text-body">
+                <div className="flex items-center gap-3 text-[13px] font-semibold tracking-[0.14em] text-gold-deep uppercase">
+                  <span className="h-px w-8 bg-gold" />
+                  Mohammed Sadique · 1950 – 2026
+                </div>
+                <p className="mt-5 font-serif text-[1.6rem] leading-[1.35] text-forest md:text-[1.85rem]">
+                  He believed that giving to others is the highest responsibility a person can hold.
                 </p>
-                <p>
-                  After his passing, his family wanted that spirit to outlive him. They chose education, because it is
-                  the one gift that keeps giving: a student who graduates goes on to support a family, and often a whole
-                  community.
+                <p className="mt-5">
+                  He rarely spoke about it, but those close to him knew how many people he had quietly helped. After his
+                  passing, his family wanted that spirit to outlive him.
                 </p>
-                <p>
-                  Today the Foundation funds scholarships for gifted students, care and mentorship for orphans, and the
-                  wider communities those graduates return to serve.
-                </p>
+
+                <blockquote className="mt-8 border-s-[3px] border-gold bg-cream/70 py-5 ps-6 pe-5 rounded-e-[4px]">
+                  <p className="font-serif text-[1.3rem] leading-snug text-forest">
+                    They chose education, because it is the one gift that keeps giving.
+                  </p>
+                  <p className="mt-2 text-base leading-[1.7]">
+                    A student who graduates goes on to support a family, and often a whole community.
+                  </p>
+                </blockquote>
+
+                <p className="mt-8 text-[15px] font-semibold text-forest">Today the Foundation funds</p>
+                <ul className="mt-4 grid gap-3 sm:grid-cols-3">
+                  {[
+                    { n: "01", t: "Scholarships for gifted students" },
+                    { n: "02", t: "Care and mentorship for orphans" },
+                    { n: "03", t: "Communities graduates serve" },
+                  ].map((f) => (
+                    <li
+                      key={f.n}
+                      className="rounded-[4px] border border-rule bg-paper px-4 py-4 shadow-[0_1px_2px_rgba(14,51,32,0.05)] transition-colors hover:border-gold/70"
+                    >
+                      <span className="font-serif text-xl leading-none text-gold-deep">{f.n}</span>
+                      <p className="mt-2 text-[15px] leading-snug text-ink">{f.t}</p>
+                    </li>
+                  ))}
+                </ul>
+
                 <Link
                   href="/founder"
-                  className="group inline-flex items-center gap-2 pt-2 text-[15px] font-semibold text-forest underline decoration-gold decoration-2 underline-offset-[7px] hover:decoration-forest"
+                  className="group mt-9 inline-flex items-center gap-3 rounded-[3px] bg-forest px-6 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-forest-deep"
                 >
                   Read about Mohammed Sadique
-                  <span className="flip-rtl inline-block transition-transform duration-200 group-hover:translate-x-1 rtl:group-hover:-translate-x-1">&rarr;</span>
+                  <span className="flip-rtl inline-flex h-6 w-6 items-center justify-center rounded-full bg-gold text-forest-deep transition-transform duration-200 group-hover:translate-x-1 rtl:group-hover:-translate-x-1">
+                    &rarr;
+                  </span>
                 </Link>
               </div>
             </Reveal>
