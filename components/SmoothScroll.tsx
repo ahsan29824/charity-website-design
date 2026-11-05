@@ -3,6 +3,12 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
 
+declare global {
+  interface Window {
+    smoothScroll?: Lenis;
+  }
+}
+
 export default function SmoothScroll() {
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -13,6 +19,9 @@ export default function SmoothScroll() {
       anchors: { offset: -80 },
     });
 
+    // Shared so other components (the back-to-top button) can scroll through Lenis
+    window.smoothScroll = lenis;
+
     let frame = requestAnimationFrame(function raf(time) {
       lenis.raf(time);
       frame = requestAnimationFrame(raf);
@@ -21,6 +30,7 @@ export default function SmoothScroll() {
     return () => {
       cancelAnimationFrame(frame);
       lenis.destroy();
+      window.smoothScroll = undefined;
     };
   }, []);
 

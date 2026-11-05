@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "./ui";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const groups = [
   {
@@ -114,9 +115,12 @@ export default function Footer() {
           </nav>
         </div>
 
-        <div className="mt-14 flex flex-col gap-2 border-t border-white/15 pt-6 text-sm text-white/50 md:flex-row md:justify-between">
+        <div className="mt-14 flex flex-col gap-2 border-t border-white/15 pt-6 text-sm text-white/50 md:flex-row md:items-center md:justify-between md:pe-20">
           <p>The Sadique Foundation is a philanthropic organisation established in the United Kingdom.</p>
-          <p>sadique.org</p>
+          <div className="flex items-center gap-4">
+            <LanguageSwitcher light up />
+            <p>sadique.org</p>
+          </div>
         </div>
       </div>
     </footer>

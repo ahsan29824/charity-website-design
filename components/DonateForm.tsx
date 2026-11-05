@@ -116,14 +116,19 @@ export default function DonateForm() {
       <div className="mt-10 border-t border-rule pt-8">
         <div className="flex items-baseline justify-between gap-4">
           <span className="text-body">Your gift</span>
-          <span className="font-serif text-3xl text-forest">{valid ? summary : "—"}</span>
+          {/* Keyed so the text is replaced, not edited, which still works after Google Translate has rewritten it */}
+          <span key={valid ? summary : "none"} className="font-serif text-3xl text-forest">
+            {valid ? summary : "—"}
+          </span>
         </div>
         <button
           type="submit"
           disabled={!valid}
           className="mt-6 w-full rounded-[3px] bg-gold py-4 text-[16px] font-semibold text-forest-deep transition-colors hover:bg-[#d39c1c] disabled:cursor-not-allowed disabled:opacity-50"
         >
-          {frequency === "monthly" ? "Give monthly" : "Donate"} {valid ? summary.replace(" a month", "") : ""}
+          <span key={`${frequency}-${total}`}>
+            {frequency === "monthly" ? "Give monthly" : "Donate"} {valid ? summary.replace(" a month", "") : ""}
+          </span>
         </button>
         <p className="mt-4 flex items-start gap-2 text-[14px] leading-snug text-body">
           <svg viewBox="0 0 24 24" className="mt-0.5 h-4 w-4 shrink-0 text-gold-deep" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>

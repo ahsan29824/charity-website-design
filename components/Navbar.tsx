@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Logo } from "./ui";
+import LanguageSwitcher from "./LanguageSwitcher";
+import T from "./T";
 
 const links = [
   { href: "/about", label: "About" },
@@ -46,25 +48,26 @@ export default function Navbar() {
                   solid ? "text-body hover:text-forest aria-[current=page]:text-forest" : "text-white/80 hover:text-white aria-[current=page]:text-white"
                 }`}
               >
-                {l.label}
+                <T>{l.label}</T>
               </Link>
             </li>
           ))}
         </ul>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1 sm:gap-3">
+          <LanguageSwitcher light={!solid} />
           <Link
             href="/donate"
             className="hidden rounded-[3px] bg-gold px-5 py-2.5 text-[15px] font-semibold text-forest-deep transition-colors hover:bg-[#d39c1c] sm:inline-flex"
           >
-            Donate
+            <T>Donate</T>
           </Link>
           <button
             onClick={() => setOpen((v) => !v)}
             className={`px-2 py-2 text-[15px] font-medium lg:hidden ${solid ? "text-forest" : "text-white"}`}
             aria-expanded={open}
           >
-            {open ? "Close" : "Menu"}
+            <T>{open ? "Close" : "Menu"}</T>
           </button>
         </div>
       </nav>
@@ -80,7 +83,7 @@ export default function Navbar() {
                   aria-current={pathname === l.href ? "page" : undefined}
                   className="block py-3 font-serif text-2xl text-forest aria-[current=page]:text-gold-deep"
                 >
-                  {l.label}
+                  <T>{l.label}</T>
                 </Link>
               </li>
             ))}
@@ -90,7 +93,7 @@ export default function Navbar() {
                 onClick={() => setOpen(false)}
                 className="inline-flex rounded-[3px] bg-gold px-5 py-3 font-semibold text-forest-deep"
               >
-                Donate
+                <T>Donate</T>
               </Link>
             </li>
           </ul>

@@ -85,7 +85,7 @@ export default function Legacy({ showStoryLink = true }: { showStoryLink?: boole
                   className="group mt-9 inline-flex items-center gap-2 text-[15px] font-semibold text-forest underline decoration-gold decoration-2 underline-offset-[7px] hover:decoration-forest"
                 >
                   Discover Mohammed Sadique&rsquo;s Story
-                  <span className="transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
+                  <span className="flip-rtl inline-block transition-transform duration-200 group-hover:translate-x-1 rtl:group-hover:-translate-x-1">&rarr;</span>
                 </Link>
               )}
             </Reveal>

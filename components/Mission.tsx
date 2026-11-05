@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Reveal from "./Reveal";
+import T from "./T";
 import ReadingChildArt from "./ReadingChildArt";
 
 const pillars = [
@@ -50,7 +51,7 @@ export default function Mission() {
                 </div>
                 <div>
                   <h3 className="font-serif text-[1.65rem] leading-snug text-forest">{p.title}</h3>
-                  <p className="mt-1 text-[15px] font-semibold text-gold-deep">{p.tag}</p>
+                  <p className="mt-1 text-[15px] font-semibold text-gold-deep"><T>{p.tag}</T></p>
                   <p className="mt-4 max-w-md leading-[1.7] text-body">{p.body}</p>
                 </div>
               </article>

@@ -4,6 +4,10 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui";
 
+export const metadata = {
+  title: "Page not found — The Sadique Foundation",
+};
+
 const suggestions = [
   { href: "/about", label: "About the Foundation" },
   { href: "/donate", label: "Make a donation" },

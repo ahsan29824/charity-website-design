@@ -42,6 +42,7 @@ const sections = [
     title: "Cookies",
     points: [
       "Cookies are small files a website stores on your device. This website does not use advertising or tracking cookies.",
+      "If you choose a language other than English, a small cookie remembers your choice and the page is translated by Google Translate, which receives the page text from your browser. English visitors do not load Google Translate at all.",
       "When we add online card payments or visitor analytics, those services may set cookies that are needed to work securely. We will list them here and ask for your consent where the law requires it.",
       "You can block or delete cookies at any time in your browser settings.",
     ],

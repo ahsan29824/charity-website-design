@@ -110,3 +110,98 @@ p {
     animation: none;
   }
 }
+
+/* Google Translate: keep its banner, tooltips and highlights out of the design */
+.goog-te-banner-frame,
+iframe.skiptranslate,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+.VIpgJd-yAWNEb-L7lbkb {
+  display: none !important;
+}
+body {
+  top: 0 !important;
+}
+.goog-text-highlight,
+font[style] {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+/* ---- Translated pages ---- */
+
+/* Hidden until Google has swapped the text in (see lib/i18n.ts), with a small spinner meanwhile */
+html.gt-pending body > * {
+  opacity: 0 !important;
+}
+html.gt-pending::after {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 38px;
+  height: 38px;
+  margin: -19px 0 0 -19px;
+  border: 3px solid rgb(23 78 47 / 0.15);
+  border-top-color: var(--color-gold);
+  border-radius: 50%;
+  animation: gt-spin 0.8s linear infinite;
+  z-index: 100;
+}
+@keyframes gt-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* A font for each script, in place of the Latin ones */
+html[lang="ur"] {
+  --font-serif: var(--font-nastaliq), var(--font-naskh), var(--font-newsreader), serif;
+  --font-sans: var(--font-naskh), var(--font-hanken), sans-serif;
+}
+html[lang="ar"] {
+  --font-serif: var(--font-naskh), var(--font-newsreader), serif;
+  --font-sans: var(--font-naskh), var(--font-hanken), sans-serif;
+}
+html[lang="hi"] {
+  --font-serif: var(--font-devanagari), var(--font-newsreader), serif;
+  --font-sans: var(--font-devanagari), var(--font-hanken), sans-serif;
+}
+html[lang="bn"] {
+  --font-serif: var(--font-bengali), var(--font-newsreader), serif;
+  --font-sans: var(--font-bengali), var(--font-hanken), sans-serif;
+}
+
+/* Joined and stacked scripts: no letter-spacing (it breaks the joins), no slanted text,
+   more room between lines, and no oversized first letter */
+html:is([lang="ur"], [lang="ar"], [lang="hi"], [lang="bn"]) * {
+  letter-spacing: 0 !important;
+}
+html:is([lang="ur"], [lang="ar"], [lang="hi"], [lang="bn"]) :is(em, i, .italic) {
+  font-style: normal;
+}
+html:is([lang="ur"], [lang="ar"], [lang="hi"], [lang="bn"]) .drop-cap::first-letter {
+  float: none;
+  font: inherit;
+  padding: 0;
+  color: inherit;
+}
+html:is([lang="ar"], [lang="hi"], [lang="bn"]) :is(h1, h2, h3) {
+  line-height: 1.35 !important;
+}
+/* Nastaliq is tall and slopes down each word, so it needs the most space */
+html[lang="ur"] :is(h1, h2, h3, .font-serif) {
+  line-height: 1.75 !important;
+}
+html[lang="ur"] body {
+  line-height: 1.9;
+}
+html[lang="ur"] :is(p, li) {
+  line-height: 2 !important;
+}
+/* Arrows point the way the text reads */
+[dir="rtl"] .flip-rtl {
+  transform: scaleX(-1);
+}

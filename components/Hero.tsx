@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui";
+import T from "./T";
 
 export default function Hero() {
   return (
@@ -49,7 +50,7 @@ export default function Hero() {
             style={{ "--hero-delay": "360ms" } as React.CSSProperties}
           >
             <Button href="/donate" variant="gold" className="px-7 py-4 shadow-[0_10px_30px_-10px_rgba(228,172,42,0.6)]">
-              Support a Student
+              <T>Support a Student</T>
             </Button>
             <Link href="#legacy" className="group inline-flex items-center gap-3 text-[15px] font-semibold text-white">
               <span className="grid h-12 w-12 place-items-center rounded-full border border-white/35 bg-white/5 backdrop-blur-sm transition-colors group-hover:border-gold group-hover:text-gold">
@@ -58,7 +59,7 @@ export default function Hero() {
                 </svg>
               </span>
               <span className="underline decoration-white/40 underline-offset-[7px] transition-colors group-hover:text-gold group-hover:decoration-gold">
-                Read the Legacy
+                <T>Read the Legacy</T>
               </span>
             </Link>
           </div>

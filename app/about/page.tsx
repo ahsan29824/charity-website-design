@@ -74,7 +74,7 @@ export default function AboutPage() {
                   className="group inline-flex items-center gap-2 pt-2 text-[15px] font-semibold text-forest underline decoration-gold decoration-2 underline-offset-[7px] hover:decoration-forest"
                 >
                   Read about Mohammed Sadique
-                  <span className="transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
+                  <span className="flip-rtl inline-block transition-transform duration-200 group-hover:translate-x-1 rtl:group-hover:-translate-x-1">&rarr;</span>
                 </Link>
               </div>
             </Reveal>
