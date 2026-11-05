@@ -1,0 +1,112 @@
+@import "tailwindcss";
+@import "lenis/dist/lenis.css";
+
+/* Brand palette taken from the Sadique logo: green tree + golden leaves */
+@theme {
+  --color-ink: #14301f;
+  --color-forest: #174e2f;
+  --color-forest-deep: #0d3320;
+  --color-cream: #f3ede1;
+  --color-paper: #fbf8f2;
+  --color-gold: #e4ac2a;
+  --color-gold-deep: #9c7210;
+  --color-body: #4a5a4f;
+  --color-rule: #dcd5c2;
+
+  --font-serif: var(--font-newsreader), Georgia, serif;
+  --font-sans: var(--font-hanken), system-ui, sans-serif;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-forest-deep);
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+.drop-cap::first-letter {
+  float: left;
+  font-family: var(--font-serif);
+  font-size: 4.6em;
+  line-height: 0.8;
+  padding: 0.08em 0.1em 0 0;
+  color: var(--color-forest);
+}
+
+/* Gentle fade-in as sections scroll into view */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Hero: copy rises in on load, the photo drifts slowly, the scroll arrow bobs */
+.hero-in {
+  animation: hero-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: var(--hero-delay, 0ms);
+}
+
+.hero-zoom {
+  animation: hero-zoom 18s ease-out both;
+}
+
+.hero-bob {
+  animation: hero-bob 2.2s ease-in-out infinite;
+}
+
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+
+@keyframes hero-zoom {
+  from {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes hero-bob {
+  50% {
+    transform: translateY(3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .hero-in,
+  .hero-zoom,
+  .hero-bob {
+    animation: none;
+  }
+}
