@@ -24,7 +24,7 @@ const groups = [
       },
       {
         q: "How do I change or cancel a monthly gift?",
-        a: "Email info@sadique.org at any time and we will change or stop your regular gift. There is no minimum period and no charge for cancelling.",
+        a: "Email contact@sadique.org at any time and we will change or stop your regular gift. There is no minimum period and no charge for cancelling.",
       },
       {
         q: "Can I get a refund?",

@@ -94,8 +94,8 @@ export default function PrivacyPage() {
                 <p className="font-serif text-2xl">Raise a concern or ask a question</p>
                 <p className="mt-2 leading-[1.65] text-white/75">
                   Email{" "}
-                  <a href="mailto:info@sadique.org?subject=Safeguarding" className="font-semibold text-gold underline underline-offset-4">
-                    info@sadique.org
+                  <a href="mailto:contact@sadique.org?subject=Safeguarding" className="font-semibold text-gold underline underline-offset-4">
+                    contact@sadique.org
                   </a>{" "}
                   or use our{" "}
                   <Link href="/contact?topic=Safeguarding" className="font-semibold text-gold underline underline-offset-4">

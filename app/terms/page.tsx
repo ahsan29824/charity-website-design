@@ -23,7 +23,7 @@ const sections = [
     title: "Monthly gifts",
     points: [
       "A monthly gift is taken on or around the same date each month until you ask us to stop.",
-      "You can change or cancel a monthly gift at any time by emailing info@sadique.org. There is no minimum period.",
+      "You can change or cancel a monthly gift at any time by emailing contact@sadique.org. There is no minimum period.",
     ],
   },
   {
@@ -56,7 +56,7 @@ const sections = [
     title: "Changes to these terms",
     points: [
       "We may update these terms from time to time. The version on this page is the one that applies to your donation.",
-      "Questions about these terms? Email info@sadique.org.",
+      "Questions about these terms? Email contact@sadique.org.",
     ],
   },
 ];

@@ -47,10 +47,10 @@ export default function ContactPage() {
               <aside>
                 <p className="text-[15px] font-semibold text-gold-deep">Write to us directly</p>
                 <a
-                  href="mailto:info@sadique.org"
+                  href="mailto:contact@sadique.org"
                   className="mt-2 inline-block font-serif text-3xl text-forest underline decoration-gold decoration-2 underline-offset-[8px] hover:decoration-forest md:text-[2.1rem]"
                 >
-                  info@sadique.org
+                  contact@sadique.org
                 </a>
                 <p className="mt-4 text-body">The Sadique Foundation · United Kingdom</p>
 

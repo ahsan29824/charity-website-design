@@ -42,8 +42,8 @@ export default async function ThankYouPage({ searchParams }: { searchParams: Pro
               <p className="mt-6 max-w-xl text-lg leading-[1.65] text-white/75">{c.body}</p>
               <p className="mt-6 max-w-xl leading-[1.65] text-white/60">
                 If your email app didn&rsquo;t open, please write to us directly at{" "}
-                <a href="mailto:info@sadique.org" className="font-semibold text-gold underline underline-offset-4">
-                  info@sadique.org
+                <a href="mailto:contact@sadique.org" className="font-semibold text-gold underline underline-offset-4">
+                  contact@sadique.org
                 </a>
                 .
               </p>

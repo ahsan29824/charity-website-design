@@ -18,7 +18,7 @@ export default function DonateForm() {
   const summary = `£${total.toLocaleString("en-GB")}${frequency === "monthly" ? " a month" : ""}`;
 
   // Online payments aren't connected yet, so the pledge is sent to the Foundation by email
-  const pledgeMail = `mailto:info@sadique.org?subject=${encodeURIComponent(`Donation pledge — ${summary}`)}&body=${encodeURIComponent(
+  const pledgeMail = `mailto:contact@sadique.org?subject=${encodeURIComponent(`Donation pledge — ${summary}`)}&body=${encodeURIComponent(
     `I would like to give ${summary} (${frequency === "monthly" ? "monthly" : "one-off"}) towards: ${fund}.\n\nPlease send me details of how to complete my donation.\n\nName:\nPhone (optional):`,
   )}`;
 

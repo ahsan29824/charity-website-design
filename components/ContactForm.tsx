@@ -28,7 +28,7 @@ export default function ContactForm() {
     const message = String(data.get("message"));
     const subject = `${topic} — ${name}`;
     const body = `${message}\n\n—\n${name}\n${email}`;
-    window.location.href = `mailto:info@sadique.org?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:contact@sadique.org?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     // Give the email app a moment to open before moving on to the thank-you page
     setTimeout(() => router.push("/thank-you?for=message"), 400);
   }
