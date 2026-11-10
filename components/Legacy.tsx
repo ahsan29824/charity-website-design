@@ -3,7 +3,7 @@ import Link from "next/link";
 import Reveal from "./Reveal";
 
 const timeline = [
-  { year: "1950", text: "Mohammed Sadique is born" },
+  { year: "1953", text: "Mohammed Sadique is born" },
   { year: "A lifetime", text: "Of quiet, unannounced generosity" },
   { year: "2026", text: "His family establishes The Sadique Foundation" },
   { year: "Today", text: "Opening doors for students who need them most" },
@@ -14,30 +14,35 @@ export default function Legacy({ showStoryLink = true }: { showStoryLink?: boole
     <section id="legacy" className="relative scroll-mt-20 overflow-hidden bg-cream py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         <div className="grid items-center gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
-          {/* Memorial arch — swap the tree mark for a portrait of Mohammed Sadique when one is available */}
+          {/* Memorial arch with his portrait */}
           <Reveal className="mx-auto w-full max-w-[17rem] pr-4 sm:max-w-[22rem] lg:mx-0">
-            <div className="relative">
+            <figure className="relative">
               <div
                 aria-hidden
                 className="absolute inset-0 translate-x-4 translate-y-4 rounded-t-full border border-gold/70"
               />
-              <div className="relative flex aspect-[3/4] flex-col items-center justify-center overflow-hidden rounded-t-full bg-forest-deep px-8 text-center">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-t-full bg-forest-deep shadow-[0_24px_50px_-24px_rgba(14,51,32,0.55)]">
+                <Image
+                  src="/mohammed-sadique.jpg"
+                  alt="Portrait of Mohammed Sadique"
+                  fill
+                  sizes="(min-width: 640px) 352px, 272px"
+                  className="object-cover object-[58%_50%] grayscale contrast-[1.05]"
+                  priority={false}
+                />
+                {/* Soft green wash so the photo sits in the site's palette, deepening behind the name */}
+                <div aria-hidden className="absolute inset-0 bg-forest-deep/10 mix-blend-multiply" />
                 <div
                   aria-hidden
-                  className="absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,rgba(228,172,42,0.22),transparent_62%)]"
+                  className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-forest-deep via-forest-deep/70 to-transparent"
                 />
-                <Image
-                  src="/logo-mark-light.png"
-                  alt=""
-                  width={523}
-                  height={483}
-                  className="relative h-36 w-auto md:h-44"
-                />
-                <div className="relative mt-8 h-px w-12 bg-gold/60" />
-                <p className="relative mt-6 font-serif text-[1.65rem] leading-tight text-white">Mohammed Sadique</p>
-                <p className="relative mt-2 text-[15px] tracking-[0.12em] text-gold">1950 – 2026</p>
+                <figcaption className="absolute inset-x-0 bottom-0 px-6 pb-7 text-center">
+                  <div className="mx-auto h-px w-10 bg-gold/70" />
+                  <p className="mt-4 font-serif text-[1.65rem] leading-tight text-white">Mohammed Sadique</p>
+                  <p className="mt-1.5 text-[15px] tracking-[0.12em] text-gold">1953 – 2026</p>
+                </figcaption>
               </div>
-            </div>
+            </figure>
           </Reveal>
 
           <div>

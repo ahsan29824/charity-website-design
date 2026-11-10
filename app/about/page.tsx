@@ -56,9 +56,17 @@ export default function AboutPage() {
             </Reveal>
             <Reveal delay={100}>
               <div className="text-lg leading-[1.75] text-body">
-                <div className="flex items-center gap-3 text-[13px] font-semibold tracking-[0.14em] text-gold-deep uppercase">
-                  <span className="h-px w-8 bg-gold" />
-                  Mohammed Sadique · 1950 – 2026
+                <div className="flex items-center gap-4 text-[13px] font-semibold tracking-[0.14em] text-gold-deep uppercase">
+                  <span className="h-14 w-14 shrink-0 overflow-hidden rounded-full ring-2 ring-gold ring-offset-2 ring-offset-paper">
+                    <Image
+                      src="/mohammed-sadique.jpg"
+                      alt="Mohammed Sadique"
+                      width={168}
+                      height={168}
+                      className="h-full w-full origin-[62%_42%] scale-[1.3] object-cover object-[62%_42%] grayscale"
+                    />
+                  </span>
+                  Mohammed Sadique · 1953 – 2026
                 </div>
                 <p className="mt-5 font-serif text-[1.6rem] leading-[1.35] text-forest md:text-[1.85rem]">
                   He believed that giving to others is the highest responsibility a person can hold.

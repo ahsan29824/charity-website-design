@@ -41,7 +41,7 @@ export default function Hero() {
             style={{ "--hero-delay": "240ms" } as React.CSSProperties}
           >
             Inspired by the lifelong generosity of{" "}
-            <span className="font-semibold text-white">Mohammed Sadique (1950–2026)</span>, we provide educational
+            <span className="font-semibold text-white">Mohammed Sadique (1953–2026)</span>, we provide educational
             pathways and financial grants to academically gifted students and orphans across developing nations.
           </p>
 

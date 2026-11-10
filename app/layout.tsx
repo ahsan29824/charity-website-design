@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The Sadique Foundation",
     description:
-      "Honouring the legacy of Mohammed Sadique (1950–2026) through scholarships for gifted students and orphans.",
+      "Honouring the legacy of Mohammed Sadique (1953–2026) through scholarships for gifted students and orphans.",
     url: "https://sadique.org",
     siteName: "The Sadique Foundation",
     locale: "en_GB",
